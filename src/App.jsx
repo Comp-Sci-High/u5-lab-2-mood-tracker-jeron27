@@ -121,3 +121,68 @@ function handleSchoolMode() {
 }
 
 export default App;
+
+useEffect(() => {
+    if (weather === "Rainy") {
+      alert("Grab an umbrella!");
+    } else if (weather === "Snowy") {
+      alert("Wear a coat and stay warm!");
+    } else if (weather === "Hot") {
+      alert("Stay hydrated!");
+    } else if (weather === "Sunny") {
+      alert("Enjoy the sunshine!");
+    }
+  }, [weather]);
+
+  return (
+    <div className="page">
+      <div className="card">
+        <h1>Weather Warning App</h1>
+        <p className="subtitle">
+          Practice using useEffect with weather changes.
+        </p>
+
+        <div className="weather-box">
+          <h2>Current Weather</h2>
+
+          {/* 9. Display weather here */}
+          <p className="output">Weather: {weather}</p>
+
+          <button
+            className="btn"
+            // 10. connect to handleRainy
+            onClick={handleRainy}
+          >
+            Rainy 🌧️
+          </button>
+
+          <button
+            className="btn"
+            // 11. connect to handleSnowy
+            onClick={handleSnowy}
+          >
+            Snowy ❄️
+          </button>
+
+          <button
+            className="btn"
+            // 12. connect to handleHot
+            onClick={handleHot}
+          >
+            Hot ☀️
+          </button>
+
+          <button
+            className="btn secondary"
+            // 13. connect to handleReset
+            onClick={handleReset}
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
